@@ -53,3 +53,19 @@ proc.call(2)                   # prints out 2
 proc.call                      # returns nil
 proc.call(1,2,3)               # prints out 1 and forgets about the extra arguments
 
+*------------------------------------------------------------------------------*
+# Example of Proc objects preserving local context
+
+def counter
+  n = 0
+  return Proc.new { n+= 1 }
+end
+
+a = counter
+a.call            # returns 1
+a.call            # returns 2
+
+b = counter
+b.call            # returns 1
+
+a.call            # returns 3
