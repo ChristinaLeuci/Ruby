@@ -15,15 +15,15 @@ It encourages stringent formatting of your view templates, lightens the content 
 a white-space templating engine
 In a typical template we’d have plain HTML like this:
 
-<h1>All Articles</h1>
+"<h1>"All Articles"</h1>"
 Using whitespace to reflect the nested structure, we could reformat it like this:
 
-<h1>
+"<h1>"
   All Articles
-</h1>
+"</h1>"
 And, if we assume that whitespace is significant, the close tag would become unnecessary here. The parser could know that the H1 ends when there’s an element at the same indentation level as the opening H1 tag. Cut the closing tag and we have:
 
-<h1>
+"<h1>"
   All Articles
 The H1 tag itself is heave with both open and close brackets. Leaving just <h1 as the HTML marker could have worked, but Hampton decided that HTML elements would be created with % like this:
 
